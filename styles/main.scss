@@ -1,0 +1,132 @@
+@import 'skills';
+
+/********************************************************************
+* Variable definitions
+********************************************************************/
+$col_val: 255, 115, 0;
+$gradient_stop_1: rgb(0, 31, 97);
+$gradient_stop_2: rgb(0, 149, 168);
+$gradient_stop_3: $gradient_stop_1;
+/********************************************************************
+* CSS Reset
+********************************************************************/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+/********************************************************************
+* Element base styling
+********************************************************************/
+summary h1, h2, h3{
+    display: inline-block;
+    cursor: pointer;
+}
+
+details{
+    cursor: pointer;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.section::before{
+    content: "";
+    height: 40px;
+    width: 200vw;
+    display: block;
+    background-color: red;
+}
+
+main > .section{
+    display: block;
+    min-height: 100vh;
+    height: 100vh;
+    &::after{
+        content: "";
+        width: 200vw;
+        height: 50px;
+        display: block;
+        position: relative;
+        background-color: green;
+    }
+}
+
+.main_header{
+    //Structure
+    position: relative;
+    height: 10vh;
+    min-height: 250px;
+    width: 110vw;
+    border-radius: 0 0 1000px 0;
+    //Style
+    //background-image: linear-gradient(-4deg, $gradient_stop_1, $gradient_stop_2,  $gradient_stop_3);
+    background-color: $gradient_stop_2;
+    box-shadow: 0 10px 0 $gradient_stop_2;
+
+
+    //
+    &::after{
+        position: relative;
+        content: "";
+        width: 120%;
+        top: 160px;
+        left: -20px;
+        display: block;
+        height: 140px;
+        background-image: linear-gradient( $gradient_stop_2, $gradient_stop_1);
+        /*border-width: 0 0 6vw 100vw;
+        border-style: solid;
+        border-color: red;*/
+        transform: rotate(-4deg);
+        z-index: 1;
+        box-shadow: 0 -50px 100px $gradient_stop_2;//, 0 50px 100px $gradient_stop_2 inset;
+        border-top: 2px solid $gradient_stop_2;
+    }
+}
+/********************************************************************
+* Reusable classes styling
+********************************************************************/
+
+.main_content{
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.section_nav{
+    li{
+        display: inline-block;
+        text-align: center;
+    }
+}
+
+/********************************************************************
+* Specific structure
+********************************************************************/
+#introduction{
+    img{
+        width: 40%;
+        height: 40%;
+        min-height: 200px;
+        min-width: 200px;
+        object-fit: contain;
+        float: right;
+        box-shadow: 0 0 8px 8px white inset;
+    }
+    
+}
+
+/********************************************************************
+* Specific stylings
+********************************************************************/
+
+
+/********************************************************************
+*
+********************************************************************/
+/********************************************************************
+*
+********************************************************************/

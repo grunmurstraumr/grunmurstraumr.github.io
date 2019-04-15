@@ -1,0 +1,54 @@
+@import 'reset';
+@import url('https://fonts.googleapis.com/css?family=Mukta');
+
+$text_color: green;
+*{
+    box-sizing: border-box;
+}
+@keyframes caret_blink{
+    0%{opacity: 0;}
+    49%{opacity: 0;}
+    50%{opacity: 1;}
+}
+body{
+    background-color: black;
+    color: $text_color;
+    font-family: "Mukta";
+}
+
+.cmdline{
+}
+.caret_blink{
+    &::after{
+        content:"\2588";
+        animation: 0.7s caret_blink infinite;
+    }
+}
+.caret_pos{
+    &::after{
+        content:"\2588";
+    }
+}
+
+.data_store{
+    display:none;
+}
+@keyframes blinking_underline{
+    0%{text-decoration-color: rgba(255,255,255, 1);}
+    50%{text-decoration-color: rgba(255,255,255, 0);}
+}
+a{
+    display: inline-block;
+    width: 75px;
+    height: 50px;
+    text-decoration: none;
+    color: $text_color;
+    text-align: center;
+    &:hover{
+        font-size: 14pt;
+    }
+}
+.highlight_selection{
+    text-decoration: underline;
+    animation: 1s blinking_underline 1 ease-in-out;
+}
