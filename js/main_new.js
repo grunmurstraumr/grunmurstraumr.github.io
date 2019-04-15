@@ -20,7 +20,7 @@ class Output{
         this.interval;
         this.writing = false;
         this.max_queue = max_queue;
-        this.speed_modifier = 1;
+        this.speed_modifier = 100;
         // this.classes contains two types of classes. One to be used on html element when writing and the other set when
         // not writing. At least on element is necessary in the array in order to not require checks before add or removing
         // from the classlist during/after writing
@@ -123,7 +123,7 @@ class Output{
                 }, 1000); //end timeout
                 }
             }
-        }, text_speed*this.speed_modifier); // end interval
+        }, this.speed_modifier); // end interval
     } //end method _inner_write
 
     write(text, text_speed){
@@ -185,7 +185,7 @@ function assign_listeners(){
     
     document.querySelector('#typing_speed_control').addEventListener('change', event =>{
         output.typing_speed = event.target.value;
-        console.log(event.target.value);
+        document.querySelector('#typing_speed_display').innerHTML = (1000/event.target.value).toFixed(2);
     })
 
 }

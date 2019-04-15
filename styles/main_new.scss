@@ -52,3 +52,15 @@ a{
     text-decoration: underline;
     animation: 1s blinking_underline 1 ease-in-out;
 }
+#typing_speed_control_container{
+    position: fixed;
+    bottom: 70px;
+}
+#typing_speed_display{
+    &::after{
+        content:" tecken/s";
+    }
+}
+#typing_speed_control{
+    transform: rotate(90deg);
+}
