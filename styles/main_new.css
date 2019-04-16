@@ -11,81 +11,111 @@
 
 @-webkit-keyframes caret_blink {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   49% {
-    opacity: 0;
+    opacity: 1;
   }
   50% {
-    opacity: 1;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
 @keyframes caret_blink {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   49% {
-    opacity: 0;
+    opacity: 1;
   }
   50% {
-    opacity: 1;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
 body {
+  padding-top: 5vh;
   background-color: black;
   color: green;
   font-family: "Mukta";
 }
 
-.caret_blink::after {
-  content: "\2588";
+.cmdline {
+  display: inline;
+  line-height: 3em;
+}
+
+.cmdline::before {
+  color: green;
+  content: "erik_g@hire_me:~$  ";
+}
+
+.caret {
+  display: inline;
   -webkit-animation: 0.7s caret_blink infinite;
           animation: 0.7s caret_blink infinite;
 }
 
-.caret_pos::after {
-  content: "\2588";
-}
-
-.data_store {
-  display: none;
-}
-
 @-webkit-keyframes blinking_underline {
   0% {
-    -webkit-text-decoration-color: white;
-            text-decoration-color: white;
+    -webkit-text-decoration-color: green;
+            text-decoration-color: green;
+    color: white;
   }
   50% {
     -webkit-text-decoration-color: rgba(255, 255, 255, 0);
             text-decoration-color: rgba(255, 255, 255, 0);
+    color: green;
   }
 }
 
 @keyframes blinking_underline {
   0% {
-    -webkit-text-decoration-color: white;
-            text-decoration-color: white;
+    -webkit-text-decoration-color: green;
+            text-decoration-color: green;
+    color: white;
   }
   50% {
     -webkit-text-decoration-color: rgba(255, 255, 255, 0);
             text-decoration-color: rgba(255, 255, 255, 0);
+    color: green;
   }
 }
 
-a {
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100%+40px);
+  border-bottom: 1px solid green;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav a {
+  font-size: 16pt;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.section_select {
   display: inline-block;
-  width: 75px;
-  height: 50px;
+  height: 2.5em;
   text-decoration: none;
   color: green;
   text-align: center;
-}
-
-a:hover {
-  font-size: 14pt;
+  cursor: pointer;
 }
 
 .highlight_selection {
@@ -94,17 +124,60 @@ a:hover {
           animation: 1s blinking_underline 1 ease-in-out;
 }
 
-#typing_speed_control_container {
-  position: fixed;
-  bottom: 70px;
+.terminal_window {
+  border-top: 1px solid green;
+  display: block;
+  width: 40vw;
+  margin: 0 auto;
 }
 
-#typing_speed_display::after {
-  content: " tecken/s";
+.image {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+#std_out_wrapper {
+  margin: 20px;
+}
+
+#typing_speed_control_container {
+  position: absolute;
+  bottom: 0px;
+  right: 45%;
+  text-align: center;
+}
+
+#typing_speed_control_container label {
+  display: block;
+}
+
+.typing-sped-control-end {
+  display: inline-block;
+  font-size: 18pt;
+  margin: 0 5px 0 5px;
 }
 
 #typing_speed_control {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-color: black;
+  outline: 1px solid green;
+  color: green;
+}
+
+#typing_speed_control::-moz-range-thumb, #typing_speed_control::-webkit-slider-thumb {
+  cursor: pointer;
+  background-color: green;
+  border: none;
+}
+
+.data_store {
+  display: none;
 }
 /*# sourceMappingURL=main_new.css.map */

@@ -6,61 +6,117 @@ $text_color: green;
     box-sizing: border-box;
 }
 @keyframes caret_blink{
-    0%{opacity: 0;}
-    49%{opacity: 0;}
-    50%{opacity: 1;}
+    0%{opacity: 1;}
+    49%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 0;}
 }
 body{
+    padding-top: 5vh;
     background-color: black;
     color: $text_color;
     font-family: "Mukta";
 }
 
 .cmdline{
-}
-.caret_blink{
-    &::after{
-        content:"\2588";
-        animation: 0.7s caret_blink infinite;
-    }
-}
-.caret_pos{
-    &::after{
-        content:"\2588";
+    display: inline;
+    line-height: 3em;
+    &::before{
+        color: $text_color;
+        content: "erik_g@hire_me:~$  ";
     }
 }
 
-.data_store{
-    display:none;
+.caret{
+    display:inline;
+    animation: 0.7s caret_blink infinite;
 }
+
+
 @keyframes blinking_underline{
-    0%{text-decoration-color: rgba(255,255,255, 1);}
-    50%{text-decoration-color: rgba(255,255,255, 0);}
+    0%{text-decoration-color: $text_color;
+        color: white;}
+    50%{text-decoration-color: rgba(255,255,255, 0);
+    color: $text_color}
 }
-a{
+
+nav{
+    display: flex;
+    width: calc(100%+40px);
+    border-bottom: 1px solid $text_color;
+    justify-content: center;
+    align-items: center;
+
+    a{
+        font-size: 16pt;
+        flex-grow: 1;
+    }
+}
+.section_select{
     display: inline-block;
-    width: 75px;
-    height: 50px;
+    height: 2.5em;
     text-decoration: none;
     color: $text_color;
     text-align: center;
+    cursor: pointer;
     &:hover{
-        font-size: 14pt;
+        
     }
 }
 .highlight_selection{
     text-decoration: underline;
     animation: 1s blinking_underline 1 ease-in-out;
 }
-#typing_speed_control_container{
-    position: fixed;
-    bottom: 70px;
+
+.terminal_window{
+    border-top: 1px solid $text_color;
+    
+    display: block;
+    width: 40vw;
+    margin: 0 auto;
 }
-#typing_speed_display{
-    &::after{
-        content:" tecken/s";
+
+.image{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 200px;
+    height: 200px;
+}
+#std_out_wrapper{
+    margin: 20px;
+}
+#typing_speed_control_container{
+    position: absolute;
+    bottom: 0px;
+    right: 45%;
+    text-align: center;
+    label{
+        display: block;
     }
 }
+
+.typing-sped-control-end{
+    display: inline-block;
+    font-size: 18pt;
+    margin: 0 5px 0 5px;
+}
 #typing_speed_control{
-    transform: rotate(90deg);
+
+    appearance: none;
+    transform: rotate(180deg);
+    background-color: black;
+    outline: 1px solid $text_color;
+    color: $text_color;
+
+
+    &::-moz-range-thumb, &::-webkit-slider-thumb{
+        cursor: pointer;
+        background-color: $text_color;
+        border: none;
+    }
+}
+
+.data_store{
+    display:none;
 }
