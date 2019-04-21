@@ -1,12 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Mukta");
+@import url("https://fonts.googleapis.com/css?family=Cousine");
 * {
   padding: 0;
   margin: 0;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 @-webkit-keyframes caret_blink {
@@ -39,104 +35,248 @@
   }
 }
 
-body {
-  padding-top: 5vh;
-  background-color: black;
-  color: green;
-  font-family: "Mukta";
+@-webkit-keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.cmdline {
-  display: inline;
-  line-height: 3em;
-}
-
-.cmdline::before {
-  color: green;
-  content: "erik_g@hire_me:~$  ";
-}
-
-.caret {
-  display: inline;
-  -webkit-animation: 0.7s caret_blink infinite;
-          animation: 0.7s caret_blink infinite;
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes blinking_underline {
   0% {
-    -webkit-text-decoration-color: green;
-            text-decoration-color: green;
-    color: white;
+    color: #EAAE3F;
   }
   50% {
-    -webkit-text-decoration-color: rgba(255, 255, 255, 0);
-            text-decoration-color: rgba(255, 255, 255, 0);
-    color: green;
+    color: #EFEFEF;
   }
 }
 
 @keyframes blinking_underline {
   0% {
-    -webkit-text-decoration-color: green;
-            text-decoration-color: green;
-    color: white;
+    color: #EAAE3F;
   }
   50% {
-    -webkit-text-decoration-color: rgba(255, 255, 255, 0);
-            text-decoration-color: rgba(255, 255, 255, 0);
-    color: green;
+    color: #EFEFEF;
   }
 }
 
-nav {
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #050505;
+  border: 1px solid #EFEFEF;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #EFEFEF;
+  height: 25px;
+}
+
+body {
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+  background-color: #050505;
+  color: #EFEFEF;
+  font-family: 'Cousine';
+  overflow-y: scroll;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.cmdline {
+  display: inline;
+  line-height: 2em;
+}
+
+.cmdline::before {
+  color: #EAAE3F;
+  content: "erik_g@hire_me:~$  ";
+}
+
+.cmdline p {
+  margin-top: 2em;
+}
+
+.command {
+  color: #4d8321;
+}
+
+.caret {
+  color: #EFEFEF;
+  display: inline;
+  -webkit-animation: 0.7s caret_blink infinite;
+          animation: 0.7s caret_blink infinite;
+}
+
+h1 {
+  color: #397677;
+}
+
+a {
+  color: #B0413E;
+}
+
+a:visited {
+  color: #B0413E;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: calc(100%+40px);
-  border-bottom: 1px solid green;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: calc(100%+40px);
+  height: 1em;
 }
 
-nav a {
+.nav_container a {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-animation: fade_in 1s;
+          animation: fade_in 1s;
+}
+
+#main_nav {
+  height: 2.5em;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+#main_nav a {
   font-size: 16pt;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
 
+#secondary_nav {
+  margin: 1em;
+  font-size: 1em;
+}
+
+.sticky {
+  position: fixed;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 10vw;
+  height: 50vh;
+  background-color: #050505;
+  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation: 1s fade_in;
+          animation: 1s fade_in;
+}
+
+.sticky a {
+  display: block;
+  margin: 5vh;
+}
+
 .section_select {
   display: inline-block;
-  height: 2.5em;
   text-decoration: none;
-  color: green;
+  color: #EFEFEF;
   text-align: center;
   cursor: pointer;
 }
 
-.highlight_selection {
+.section_select:hover {
   text-decoration: underline;
+}
+
+.highlight_selection {
   -webkit-animation: 1s blinking_underline 1 ease-in-out;
           animation: 1s blinking_underline 1 ease-in-out;
 }
 
 .terminal_window {
-  border-top: 1px solid green;
+  border-top: 1px solid #EFEFEF;
   display: block;
   width: 40vw;
   margin: 0 auto;
 }
 
+.skill_details {
+  min-height: 250px;
+  margin-bottom: 20px;
+}
+
+.skill_details h1 {
+  margin: 1em 0 0 0;
+}
+
+.skill_details p {
+  margin: 0 0 1em 0;
+}
+
+.skill_details ul {
+  margin: 0 0 2em 1em;
+}
+
+.skill_details details > p {
+  margin: 0 0 0 2em;
+}
+
 .image {
-  position: fixed;
-  right: 20px;
-  top: 20px;
+  margin: 20px;
+  -webkit-animation: 2s fade_in 1;
+          animation: 2s fade_in 1;
+}
+
+.profile_pic {
+  float: right;
   width: 200px;
   height: 200px;
+}
+
+.logo_pic {
+  width: 150px;
+  height: 150px;
+}
+
+.logo_left {
+  float: left;
+}
+
+.logo_right {
+  float: right;
+}
+
+.hidden {
+  display: none;
 }
 
 #std_out_wrapper {
@@ -144,9 +284,13 @@ nav a {
 }
 
 #typing_speed_control_container {
-  position: absolute;
-  bottom: 0px;
-  right: 45%;
+  position: fixed;
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  background-color: #050505;
+  bottom: 0;
+  left: 0;
   text-align: center;
 }
 
@@ -154,7 +298,7 @@ nav a {
   display: block;
 }
 
-.typing-sped-control-end {
+.typing-speed-control-end {
   display: inline-block;
   font-size: 18pt;
   margin: 0 5px 0 5px;
@@ -167,13 +311,13 @@ nav a {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   background-color: black;
-  outline: 1px solid green;
-  color: green;
+  outline: 1px solid #EFEFEF;
+  color: #EFEFEF;
 }
 
 #typing_speed_control::-moz-range-thumb, #typing_speed_control::-webkit-slider-thumb {
   cursor: pointer;
-  background-color: green;
+  background-color: #EFEFEF;
   border: none;
 }
 
