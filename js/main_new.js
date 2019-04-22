@@ -79,6 +79,7 @@ class Output{
             let start_index = 0;
             if (next_char === '<'){
                 let block_append = false;
+                let block_traverse = false;
                 let old_index = index;
                 // Find the end of the tag
                 index = text.indexOf('>', index);
@@ -90,21 +91,22 @@ class Output{
                     // Check for details tag
                     if (tag.match(/<li.*>/)){
                         // If details tag is matched, find the closing tag
-                        index = text.indexOf('</li>',index)
+                        index = text.indexOf('</li>',index+1)
                         // Find the index of the last > of the tag
-                        index = text.indexOf('>', index);
+                        index = text.indexOf('>', index+1);
                         // Collect the entire contents of the details tag
                         tag = text.substring(old_index, index+1);
                         iteration_delay = 250;
+                        block_traverse;
                         
-                    } else if(tag.match(/<details.*>/)){
+                    /*} else if(tag.match(/<details.*>/)){
                         index = text.indexOf('</details>',index)
                         // Find the index of the last > of the tag
                         index = text.indexOf('>', index);
                         // Collect the entire contents of the details tag
                         tag = text.substring(old_index, index+1);
                         iteration_delay = 250;
-                    
+                    */
                     }else if(tag.match(/<a\b.*>/)){
                         index = text.indexOf('</a>', index);
                         index = text.indexOf('>', index);
@@ -137,19 +139,13 @@ class Output{
                 }else if(tag.match(/<!\-\-.*\-\->/)){
                     // Matching a html comment do nothing
                 } else{
-                    console.error(`Invalid tag matched: ${tag}`)
-                    throw('Parse error');
-                    
+                    throw('HTML tag parsing error');
                 }
             }
             else{
                 iteration_delay = this.speed_modifier;
                 if(!output_wrapper.classList.contains('no_type')) // This if prevents the image from "blinking" because of re-rendering of the base node
                     output_wrapper.innerHTML += next_char + this.caret;
-            }
-            if(index < 0){
-                console.log('Somethings wrong!')
-                return
             }
             index++;
             
@@ -207,22 +203,41 @@ function write(text, text_speed=500){
 
 function assign_listeners(){
     let section_links = document.querySelectorAll('.section_select');
+
     section_links.forEach(element => element.addEventListener('click', event=>{
+        if (output.writing){
+            output.cancel = true;
+        }
         // Turns of initial state animations such as blinking links
         initial_state = false;
         clear_node(document.querySelector('#secondary_nav'))
     }));
-    document.querySelector('#introduction_link').addEventListener('click',(event) => {
+    document.querySelector('#introduction_link').addEventListener('click', event => {
         let intro = document.querySelector('#introduction');
         write(intro.innerHTML);
     });
-    document.querySelector('#skills_link').addEventListener('click',(event) => {
+    document.querySelector('#skills_link').addEventListener('click', event => {
         let skills_section = document.querySelector('#skills');
         write(skills_section.innerHTML);
     });
-    document.querySelector('#c').addEventListener('click',(event) => {
+
+    document.querySelector('#knowledge_link').addEventListener('click', event => {
+        let knowledge_section = document.querySelector('#knowledge');
+        write(knowledge_section.innerHTML);
+    });
+    document.querySelector('#portfolio_link').addEventListener('click', event => {
+        let portfolio_section = document.querySelector('#portfolio');
+        document.querySelector('#std_out').innerHTML = portfolio_section.outerHTML;
+    })
+    document.querySelector('#cv_link').addEventListener('click',event => {
         let cv_section = document.querySelector('#cv');
-        write(cv_section.innerHTML);
+        let nav_elements = cv_section.querySelectorAll('.section_navlink');
+        let nav_container = document.querySelector('#secondary_nav');
+        for (let navlink of nav_elements){
+            navlink.parentNode.removeChild(navlink);
+            nav_container.appendChild(navlink);
+        }
+        document.querySelector('#std_out').innerHTML = cv_section.outerHTML;
     });
     
     document.querySelector('#typing_speed_control').addEventListener('change', event =>{
@@ -261,7 +276,9 @@ document.addEventListener('DOMContentLoaded', () =>{
     },500);
     output.write("Hej <strong>Tromb!</strong> <pause>\nKlicka på länkarna ovanför för att se min ansökan!");
     let out = document.querySelector('#std_out_wrapper');
-    //console.log(out);
-    //tw = new Typewriter(out,{delay: 1, cursor: '\u2588'});
+    
+    // Temporär
+    document.querySelector('#c').click();
+
 })
 

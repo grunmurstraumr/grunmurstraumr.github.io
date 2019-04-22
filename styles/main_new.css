@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Mukta");
 @import url("https://fonts.googleapis.com/css?family=Cousine");
 * {
   padding: 0;
@@ -71,9 +70,30 @@
   }
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+@-webkit-keyframes grow_in {
+  from {
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes grow_in {
+  from {
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
 }
 
 ::-webkit-scrollbar {
@@ -90,6 +110,14 @@
   height: 25px;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*************************************************
+* Base elements
+************************************************/
 body {
   padding-top: 5vh;
   padding-bottom: 10vh;
@@ -103,32 +131,7 @@ summary {
   cursor: pointer;
 }
 
-.cmdline {
-  display: inline;
-  line-height: 2em;
-}
-
-.cmdline::before {
-  color: #EAAE3F;
-  content: "erik_g@hire_me:~$  ";
-}
-
-.cmdline p {
-  margin-top: 2em;
-}
-
-.command {
-  color: #4d8321;
-}
-
-.caret {
-  color: #EFEFEF;
-  display: inline;
-  -webkit-animation: 0.7s caret_blink infinite;
-          animation: 0.7s caret_blink infinite;
-}
-
-h1 {
+h1, h2, h3, h4 {
   color: #397677;
 }
 
@@ -142,6 +145,126 @@ a:visited {
 
 ul {
   list-style-type: none;
+}
+
+p + p {
+  margin-top: 2em;
+}
+
+/*************************************************
+* Class selectors
+*************************************************/
+.hidden, .data_store {
+  display: none;
+}
+
+.terminal_window {
+  border-top: 1px solid #EFEFEF;
+  display: block;
+  margin: 0 auto;
+  width: 40vw;
+}
+
+.cmdline {
+  display: inline;
+  line-height: 2em;
+}
+
+.cmdline::before {
+  color: #EAAE3F;
+  content: "erik_g@hire_me:~$  ";
+}
+
+.command {
+  color: #4d8321;
+}
+
+.caret {
+  color: #EFEFEF;
+  display: inline;
+  -webkit-animation: 0.7s caret_blink infinite;
+          animation: 0.7s caret_blink infinite;
+}
+
+.skill_details, .portfolio_entry {
+  min-height: 250px;
+  margin-bottom: 20px;
+}
+
+.skill_details h1, .portfolio_entry h1 {
+  margin: 1em 0 0 0;
+}
+
+.skill_details p, .portfolio_entry p {
+  margin: 0 0 1em 0;
+}
+
+.skill_details ul, .portfolio_entry ul {
+  margin: 0 0 2em 1em;
+}
+
+.skill_details details > p, .portfolio_entry details > p {
+  margin: 0 0 0 2em;
+}
+
+.image {
+  margin: 20px;
+  -webkit-animation: 2s fade_in 1;
+          animation: 2s fade_in 1;
+}
+
+.profile_pic {
+  float: right;
+  width: 200px;
+  height: 200px;
+}
+
+.logo_pic {
+  float: right;
+  width: 150px;
+  height: 150px;
+}
+
+#std_out_wrapper {
+  margin: 20px;
+}
+
+#typing_speed_control_container {
+  position: fixed;
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  background-color: #050505;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+#typing_speed_control_container label {
+  display: block;
+}
+
+.typing-speed-control-end {
+  display: inline-block;
+  font-size: 18pt;
+  margin: 0 5px 0 5px;
+}
+
+#typing_speed_control {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-color: black;
+  outline: 1px solid #EFEFEF;
+  color: #EFEFEF;
+}
+
+#typing_speed_control::-moz-range-thumb, #typing_speed_control::-webkit-slider-thumb {
+  cursor: pointer;
+  background-color: #EFEFEF;
+  border: none;
 }
 
 .nav_container {
@@ -190,12 +313,7 @@ ul {
   top: 0;
   width: 10vw;
   height: 50vh;
-  background-color: #050505;
   margin: 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-animation: 1s fade_in;
           animation: 1s fade_in;
 }
@@ -222,106 +340,74 @@ ul {
           animation: 1s blinking_underline 1 ease-in-out;
 }
 
-.terminal_window {
-  border-top: 1px solid #EFEFEF;
-  display: block;
-  width: 40vw;
-  margin: 0 auto;
+@keyframes caret_blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.skill_details {
-  min-height: 250px;
-  margin-bottom: 20px;
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.skill_details h1 {
-  margin: 1em 0 0 0;
+@keyframes blinking_underline {
+  0% {
+    color: #EAAE3F;
+  }
+  50% {
+    color: #EFEFEF;
+  }
 }
 
-.skill_details p {
-  margin: 0 0 1em 0;
+@keyframes grow_in {
+  from {
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
 }
 
-.skill_details ul {
-  margin: 0 0 2em 1em;
+#cv {
+  padding: 5%;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+  -webkit-animation: 1s grow_in;
+          animation: 1s grow_in;
+  -webkit-box-shadow: 5px 5px 20px black;
+          box-shadow: 5px 5px 20px black;
 }
 
-.skill_details details > p {
-  margin: 0 0 0 2em;
+#cv details {
+  margin: 5px 0 30px 5%;
 }
 
-.image {
-  margin: 20px;
-  -webkit-animation: 2s fade_in 1;
-          animation: 2s fade_in 1;
+#cv details[open] {
+  margin-bottom: 30px;
 }
 
-.profile_pic {
-  float: right;
-  width: 200px;
-  height: 200px;
-}
-
-.logo_pic {
-  width: 150px;
-  height: 150px;
-}
-
-.logo_left {
-  float: left;
-}
-
-.logo_right {
-  float: right;
-}
-
-.hidden {
-  display: none;
-}
-
-#std_out_wrapper {
-  margin: 20px;
-}
-
-#typing_speed_control_container {
-  position: fixed;
-  display: block;
-  width: 100%;
-  padding-top: 10px;
-  background-color: #050505;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-}
-
-#typing_speed_control_container label {
-  display: block;
-}
-
-.typing-speed-control-end {
-  display: inline-block;
-  font-size: 18pt;
-  margin: 0 5px 0 5px;
-}
-
-#typing_speed_control {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  background-color: black;
-  outline: 1px solid #EFEFEF;
-  color: #EFEFEF;
-}
-
-#typing_speed_control::-moz-range-thumb, #typing_speed_control::-webkit-slider-thumb {
-  cursor: pointer;
-  background-color: #EFEFEF;
-  border: none;
-}
-
-.data_store {
-  display: none;
+@media screen and (max-width: 720px) {
+  .terminal_window {
+    width: 100vw;
+  }
 }
 /*# sourceMappingURL=main_new.css.map */

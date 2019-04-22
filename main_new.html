@@ -15,7 +15,9 @@
                     <div id="main_nav" class="nav_container">
                         <a id="introduction_link" class="section_select">Introduktion</a>
                         <a id="skills_link" class="section_select">Kompetenser</a>
-                        <a id="c" class="section_select">CV</a>
+                        <a id="knowledge_link" class="section_select">Teoretiskt</a>
+                        <a id="portfolio_link" class="section_select">Portfolio</a>
+                        <a id="cv_link" class="section_select">CV</a>
                     </div>
                     <!-- The secondary nav is used as an insertion point for additional nav-links in sub-sections of the page.-->
                     <div id="secondary_nav" class="nav_container"></div>                
@@ -31,39 +33,117 @@
         </main>
 
         <div id="hidden_content" class="data_store">
-                <section class="section" id="introduction">
-                        <span class="command">find new_dev | http://</span>
-                        <h1 class="section_heading">Kort om mig</h1>
-                        <img class="image profile_pic" src="/images/ErikGrundstrom02.jpg" />
-                        <p>
-                            Erik Grundström heter jag. Jag är en till största delen självlärd programmerare
-                            som söker efter nya utmaningar. Jag har programmerat på hobbynivå i ett par år nu
-                            börjar nu känna att min kompetens räcker till för att börja arbeta professionellt 
-                            som junior utvecklare.
-                        </p>
-                        <!-- Ignore comments -->
-                        <p>
-                            Min väg in i programmeringens värld är något krokig och man kan väl säga att den
-                            började under sista året som jag studerade ljudteknik vid musikhögskolan
-                            i Piteå. Där läste jag en kurs som hette <em><a target="_blank" href="https://www.ltu.se/edu/course/S00/S0030F/Programmering-inom-ljudomradet-1.44002"> 
-                            Programmering inom ljudområdet </a></em> . Den kursen var i grund och botten en snabb 
-                            introduktion till C++ och programmering med enkla applikationer mot ljudprogrammering.
-                            Målet med kursen var aldrig att bli programmerare utan att få en fördjupad förståelse
-                            för hur digitalt ljud fungerar. 
-                        </p>
-                        <p>
-                            Man kan väl säga att jag fick blodad tand på programmering i och med den kursen. Idag
-                            spenderar jag den mesta av min fritid med att experimentera med, och skriva kod. Jag
-                            har ett tydligt mål om att hitta ett jobb som programmerare inom en snar framtid och
-                            hoppas att jag får chansen på <strong>Tromb!</strong>
-                        </p> 
-                    </section>
+            <section class="no_type" id="knowledge">
+                <span class="command">ls -a skills</span>
+                <div id="knowledge_cs" class="skill_details">
+                    <h1>Datavetenskap</h1>
+                    <a class="section_navlink" href="#knowledge_cs">Datavetenskap</a>
+                    <p> 
+                        Eftersom mina datavetenskapliga grundkunskaper kommer från universitetskurser så känner jag att 
+                        jag har en ganska stabil grund som jag står på. Jag gillar även att läsa om datavetenskap och min
+                        absoluta favoritkanal på Youtube är <a target="_blank" href="https://www.youtube.com/user/Computerphile">Computerphile</a>
+                    </p>
+                    <p>
+                        Jag försöker hålla mig hyfsat uppdaterad inom området också genom Youtube, Quora, Reddit och podcasts. Jag följer nästan
+                        slaviskt Michael Kennedy's podcast <a target="_blank" href="https://talkpython.fm/">Talk Python to me</a>.
+                    </p>
+                </div>
+                        
+                <div id="knowledge_datastructures" class="skill_details">
+                    <h1>Datastrukturer</h1>
+                    <a class="section_navlink" href="#knowledge_datastructures">Datastrukturer</a>
+                    <p> Jag är bekant med en del av dom vanligaste (och viktigaste?) datastrukturerna som lists, queues, stacks och trees.
+                        Jag kan resonera kring olika <i>tradeoffs</i> med dom olika datastrukturerna och anser mig ha vissa färdigheter i att
+                        välja ett lämpligt alternativ för olika användningsområden.
+                    </p>
+                    <p>
+                        Vissa av datastrukturerna har jag även implementerat i kod, vissa i Python och vissa i C++. I Python har jag bland annat
+                        implementerat ett <i>parse-tree</i> för matematiska beräkningar av godtycklig längd med korrekt operator prioritet,
+                        inklusive parenteser. I C++ har jag implementerat några av "låg-nivå" strukturerna som <i>listor</i>, <i>double-ended queues</i>,
+                        och <i>stacks</i>. Visserligen pratar vi hyfsat naiva implementationer utan överdrivet robusta kontroller och felskydd men 
+                        jag skulle nog säga att det ändå visar på förståelse för hur strukturerna fungerar bakom kulisserna. 
+                    </p>
+                </div>
+                        
+                <div id="knowledge_algorithms" class="skill_details">
+                    <h1>Algoritmer</h1>
+                    <a class="section_navlink" href="#knowledge_algorithms">Algoritmer</a>
+                    <p>
+                        Jag har grundförståelse för en del av dom vanliga standard-algoritmerna som ofta används inom datavetenskap. 
+                        Jag har implementerat dom vanligaste sorteringsalgoritmerna i C++, som insertion-sort, selection-sort, quick-sort
+                        merge-sort och självklart den absolut bästa sorteringsalgoritmen någonsin: bubble-sort...  
+                    </p>
+                    <p>
+                        Big O notation och komplexitet förstår jag och kan i viss mån resonera mig fram till, även om jag inte riktigt har
+                        koll på matematiken för att formellt beräkna dessa. Fast då är jag ju framförallt självlärd och har ingen Master-examen
+                        i datavetenskap eller likanande så det är väl kanske ok ändå. Jag förstår vad som är rimliga nivåer att ligga på för olika 
+                        algoritmer och kan resonera kring hur både tids- och minneskomplexitet kan påverka min egen kod. 
+                    </p>
+                </div>
+                        
+                <div id="knowledge_design_patterns" class="skill_details">
+                <h1>Designmönster</h1>
+                <a class="section_navlink" href="#knowledge_design_patterns">Designmönster</a>
+                    <p>
+                        Även designmönster är jag bekant med. Singleton, Factory, Wrapper, Adapter, Interface, MVC, Observer osv. Vissa har jag
+                        använt i egen kod, vissa har jag indirekt använt genom ramverk som exempelvis Django, och vissa känner jag till i 
+                        teorin och förstår hur dom fungerar samt deras användningsområden. 
+                    </p>
+                    <p>
+                        Jag har bland annat implementerat Singleton mönstret i en Python klass genom att använda mig av Pythons metaklasser, och
+                        så klart Factory mönstret vid flera tillfällen tillsammans med polymorfism. Det sistnämnda har jag använt i både C++ och 
+                        Python kod. 
+                    </p>
+                </div>
+                <div id="knowledge_methods" class="skill_details">
+                    <h1>Arbetsmetoder</h1>
+                    <a class="section_navlink" href="#knowledge_methods">Arbetsmetoder</a>
+                    <p>
+                        Jag är bekant med Test-driven utveckling och har testat det i en del av mina experiment. Jag förstår helt klart värdet
+                        av att arbeta med en "test-first" metodologi för att säkerställa att koden blir robust och korrekt. Självklart innebär 
+                        detta att jag är bekant med unit-testing även om jag inte alltid har disciplinen att implementera detta så mycket som
+                        jag borde. Eftersom jag för det mesta kodat på egen hand och inte har så stor erfarenhet av större mjukvaruprojekt
+                        kan jag också känna att det kan vara svårt att ha arkitekturen så pass klar att det blir enkelt att skriva unit-tests.
+                        Däremot så försöker jag, även om jag inte alltid använder automatiserade tester, att hålla en ganska tight itereringsloop
+                        mellan att skriva kod och att testa. Detta är superviktigt för att upptäcka buggar tidigt och se att man faktiskt skriver
+                        kod som tar projektet i rätt riktning.
+                    </p>
+                    <p>
+                        Eftersom jag aldrig har jobbat med programmering i team så ska jag erkänna att agila metoder som <em>Scrum</em> eller <em>Kanban</em>
+                        känner jag i princip bara till i teorin. Jag vill dock gärna lära mig att arbeta enligt dessa metoder.
+                    </p>
+                </div>
+            </section>
+            <section class="section" id="introduction">
+                <span class="command">find new_dev | http://</span>
+                    <h1 class="section_heading">Kort om mig</h1>
+                    <img class="image profile_pic" src="/images/ErikGrundstrom02.jpg" />
+                    <p>
+                        Erik Grundström heter jag. Jag är en till största delen självlärd programmerare
+                        som söker efter nya utmaningar. Jag har programmerat på hobbynivå i ett par år nu
+                        börjar nu känna att min kompetens räcker till för att börja arbeta professionellt 
+                        som junior utvecklare.
+                    </p>
+                    <p>
+                        Min väg in i programmeringens värld är något krokig och man kan väl säga att den
+                        började under sista året som jag studerade ljudteknik vid musikhögskolan
+                        i Piteå. Där läste jag en kurs som hette <em><a target="_blank" href="https://www.ltu.se/edu/course/S00/S0030F/Programmering-inom-ljudomradet-1.44002"> 
+                        Programmering inom ljudområdet </a></em> . Den kursen var i grund och botten en snabb 
+                        introduktion till C++ och programmering med enkla applikationer mot ljudprogrammering.
+                        Målet med kursen var aldrig att bli programmerare utan att få en fördjupad förståelse
+                        för hur digitalt ljud fungerar. 
+                    </p>
+                    <p>
+                        Man kan väl säga att jag fick blodad tand på programmering i och med den kursen. Idag
+                        spenderar jag den mesta av min fritid med att experimentera med, och skriva kod. Jag
+                        har ett tydligt mål om att hitta ett jobb som programmerare inom en snar framtid och
+                        hoppas att jag får chansen på <strong>Tromb!</strong>
+                    </p> 
+                </section>
                     <section id="skills" class="no_type">
                         <span class="command">ls -a skills</span>
                         <div id="python_details" class="skill_details no_type">
-                                
                             <h1>Python</h1>
-                            
                             <img class="image logo_pic logo_right" src="images/python_logo.png" alt="Python logotyp">
                             <a class="section_navlink" href="#python_details">Python</a>
                             <p> Python är mitt absoluta favoritspråk att skriva kod i. Jag är bekant och bekväm med många av de <em>features</em> som gör 
@@ -182,8 +262,8 @@
                             <p>
                                 Jag vill verkligen inte påstå att jag är någon expert när det kommer till <abbr title="Structured Query Language">SQL</abbr>
                                 men jag kan grunderna och kan ofta få mina queries att fungera. Kort och gott så skulle jag säga att mina SQL kunskaper är
-                                funktionella. I och med att jag är en <em>'Aspiring Pythonista'</em> så har jag så klart använt verktyg för att ta mig runt
-                                SQL-skrivandet som SQLAlchemy och framförallt Django's <abbr title="Object Relational Model">ORM</abbr>.
+                                funktionella. Jag har däremot använt mig av andra verktyg för att förenklar 
+                                SQL-skrivandet som exempelvis SQLAlchemy och framförallt Django's <abbr title="Object Relational Model">ORM</abbr>.
                             </p>
                         </div>
                         <div id="C++_details" class="skill_details no_type">
@@ -191,44 +271,64 @@
                             <image class="image logo_pic logo_right" src="images/cpp_logo.png" alt="C++ Logotyp">
                             <a class="section_navlink" href="#C++_details">C++</a>
                             <p>
-                                Det var med C++ som allt började för min del. 
+                                Det var med C++ som allt började för min del. På ett sätt känns det fortfarande lite som att komma hem när jag skriver C++ kod.
+                                Dock så måste jag nog erkänna att mina C++ chops är lite smått rostiga eftersom jag framförallt skriver webb-kod nuförtiden. 
+                                Dock ser jag stor potential för att kunna förbättra min skicklighet med C++ genom att skriva prestandakrävande delar av 
+                                Python program som C++ moduler med hjälp av Pythons C API.
                             </p>
                         </div>
                     </section>
-                    <section id="cv" class="no_type">
-                        <h1 class="section_heading">Formellt CV</h1>
-                        
-                        
-        
-                        <section id="cv_education" class="no_type">
-                            <h2>Utbildning</h2>
-                            <a class="section_navlink" href="#cv_education">Utbildning</a>
-                            <ul>
-                                <li>
+            <section id="cv" class="no_type">
+                <h1 class="section_heading">Formellt CV</h1>
+                <section id="cv_education" class="no_type">
+                    <h2>Utbildning</h2>
+                    <a class="section_navlink" href="#cv_education">Utbildning</a>
+                    <details open>
+                        <summary>Universitet</summary>
+                        <ul>
+                            <li>
+                                <details>
+                                    <summary>Programvaruteknik 2013 - 2014</summary>
+                                    <details open>
+                                        <p>Mittuniversitetet </p>
+                                        <summary>Beskrivning</summary>
+                                        <p class="education_description">
+                                            Programvaruteknik är ett kandidatprogram på distans som ges av Mittuniversitetet. Jag började studera på
+                                            detta program efter min examen i Ljudteknik när jag insåg att jag inte ville arbeta som ljudtekniker, att jag
+                                            hellre ville ge mig in i datavetenskapens underbara värld.
+                                        </p>
+                                    </details>
                                     <details>
-                                        <summary>Programvaruteknik - Mittuniversitetet 2013-2014</summary>
-                                        <ul>
-                                            <li>Datavetenskap</li>
-                                            <li>Operativsystem</li>
-                                            <li>C++</li>
-                                            <li>Procedurell och objektorienterad programmering</li>
+                                        <summary>Kurser</summary>
+                                        <ul class="course_list">
+                                            <li>Datavetenskaplig introduktionskurs</li>
+                                            <li>Operativsystem introduktion med tillämpningar i Linux</li>
+                                            <li>Introduktion till programmering i C++</li>
+                                            <li>Objektbaserad programmering i C++</li>
                                             <li>IT-säkerhet</li>
-                                            <li>Matematik</li>
+                                            <li>Diskret matematik för programmerare</li>
                                         </ul>
                                     </details>
-                                </li>
-                                <li>
-                                    <details>
-                                        <summary>Ljudteknik fil. kand. - Luleå Tekniska Universitet 2010 - 2013</summary>
-                                        <p>
-                                            Som jag skrev tidigare innehöll den här utbildningen den kurs som gjorde mig förälskad i kod.
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary>Ljudteknik fil. kand. 2010 - 2013</summary>
+                                    <p>Luleå Tekniska Universitet</p>
+                                    <details open>
+                                        <summary>Beskrivning</summary>
+                                        <p class="education_description">
+                                            Som jag skrev i introduktionen innehöll den här utbildningen den kurs som gjorde mig förälskad i kod.
                                             Jag fick även möjlighet att utnyttja en del programmering i mitt 
-                                            <a target="_blank" href="http://ltu.diva-portal.org/smash/record.jsf?pid=diva2%3A1022814&dswid=9098">ex-jobb</a> 
+                                            <a title="Rounding errors in floating-point audio" target="_blank" href="http://ltu.diva-portal.org/smash/record.jsf?pid=diva2%3A1022814&dswid=9098">ex-jobb</a> 
                                             där jag undersökte om det gör någon skillnad att använda 64-bitars floating-point, dvs double precision, inuti
                                             ljudmjukvara mot 32-bitar, single-precision floats. Kort och gott: Är målet 16-bitar så duger 32 men om målet är
                                             24-bitar, vilket det ofta är innan ett musikprojekt når slutprodukten, så ger 32-bitar tillräckligt med avrundningsfel
                                             för att påverka slutresultatet. Jag skrev kod för att kunna testa detta i C++. 
                                         </p>
+                                    </details>
+                                    <details>
+                                        <summary>Kursämnen</summary>
                                         <ul>
                                             <li>Musikinspelning</li>
                                             <li>Ljudredigering</li>
@@ -238,48 +338,134 @@
                                             <li>Grundläggande elektronik</li>
                                         </ul>
                                     </details>
-                                </li>
-                                <li>
-                                    <details><summary>Övrigt</summary>
-                                        <ul>
-                                            <h2>Fristående kurser</h2>
-                                            <li>Psykologi</li>
-                                            <li>Statistik</li>
-                                            <li>Programmering</li>
-                                        </ul>
-                                    </details>
-                                </li>
-                            </ul>
-                        </section>
-                        <section id="cv_workexperience">
-                            <h2 class="list_heading">Arbetslivserfarenhet</h2>
-                            <a class="section_navlink" href="#cv_work">Arbete</a>
-                            <li>
-                                <details>
-                                    <summary>Ica Kvantum Piteå <span class="cv_time_period">2015 - Nu</span></summary>
-                                    <p>
-                                        Jag är idag ansvarig för frukt och grönt avdelningen. Sedan jag blev ansvarig på avdelningen
-                                        har jag tagit fram en introduktionsplan för nya medarbetare 
-                                    </p>
                                 </details>
                             </li>
                             <li>
                                 <details>
-                                    <summary>Sveriges Radio <span class="cv_time_period">2012 - 2013</span></summary>
-                                    <p>Arbetade extra och vik som ljudtekniker. Arbete innefattade bland annat:
-                                        <ul>
-                                            <li>Direktsändning från studio</li>
-                                            <li>Direktsänding över IP-upplänk</li>
-                                            <li>Inspelning</li>
-                                            <li>Ljudredigering</li>
-                                            <li>Felsökning</li>
-                                            <li>IT-stöd till reportrar</li>
-                                        </ul>
-                                    </p>
-                                </details></li>
-                            </section>
-                    </section>
+                                <summary>Övrigt</summary>
+                                <h4>Fristående kurser</h2>
+                                    <ul>
+                                        <li>Psykologi</li>
+                                        <li>Statistik</li>
+                                        <li>Programmering</li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details> <!-- University details end-->
+                    <details>
+                        <summary>Gymnasie/Folkhögskola</summary>
+                        <ul>
+                            <li>MA011X Grundkurs Matematik C. Mittuniversitetet 2012</li>
+                            <li>Musik och Ljudtekniklinjen. Hola folkhögskola 2009 - 2010</li>
+                            <li>Estetiska Programmet, inriktning Musik. Härnsösands Gymnasium 2003 - 2006</li>
+                        </ul>
+                    </details>
+                </section> <!--Education section end-->
+                <section id="cv_work">
+                    <h2 class="list_heading">Arbetslivserfarenhet</h2>
+                    <a class="section_navlink" href="#cv_work">Arbete</a>
+                    
+                        <details>
+                            <summary>Ica Kvantum Piteå <span class="cv_time_period">2015 - Nu</span></summary>
+                            <p>
+                                Jag är idag ansvarig för frukt och grönt avdelningen. Sedan jag blev ansvarig på avdelningen
+                                har jag bland annat tagit fram en introduktionsplan för nya medarbetare, varit delaktig i att strukturera
+                                upp avdelningens informationsflöde, samt uppdaterat dagliga rutiner.
+                            </p>
+                            <p>
+                                Särskilt värt att nämna är att jag tagit fram ett enkelt program för webbläsaren som förenklar hantering
+                                av streckkoder i kassorna som kommer att introduceras för personalen under kommande vecka.
+                            </p>
+                            <h4>Arbetsuppgifter (urval)</h4>
+                            <ul>
+                                <li>Beställningar</li>
+                                <li>Planering</li>
+                                <li>Daglig styrning</li>
+                                <li>Uppföljning av resultat</li>
+                                <li>Artikelvård i IT-systemen</li>
+                                <li>Delta i stora ledningsgruppen</li>
+                                <li>Delta i telefonmöten</li>
+                                <li>Sortimentsvård</li>
+                                <li>Kommunikation till övriga avdelningar</li>
+                            </ul>
+                        </details>
+                    
+                    
+                        <details>
+                            <summary>Sveriges Radio <span class="cv_time_period">2012 - 2013</span></summary>
+                            <p>Arbetade extra och vik som ljudtekniker. Arbete innefattade bland annat:</p>
+                            <ul>
+                                <li>Direktsändning från studio</li>
+                                <li>Direktsänding över IP-upplänk</li>
+                                <li>Inspelning</li>
+                                <li>Ljudredigering</li>
+                                <li>Felsökning, hårdvara</li>
+                                <li>IT-stöd till reportrar</li>
+                            </ul>
+                        </details>
+                        <details>
+                                <summary>Butiksmedarbetare </summary>
+                                <p><span class="cv_time_period">2015 - Nu</span></p>
 
+                                <h4>Arbetsuppgifter (urval)</h4>
+                                <ul>
+                                    <li>Varupåfyllning</li>
+                                    <li>Kassaarbete</li>
+                                    <li>Daglig styrning</li>
+                                    <li>Kundservice</li>
+                                </ul>
+                            </details>
+                    </section>
+            </section>
+            <section id="portfolio">
+                <div class="portfolio_entry">
+                    <h1>Den här!</h1>
+                    <img>
+                    <p>
+                        Den här sidan, min ansökan till Tromb, är kankse det bästa jag har att visa upp i min portfolio.
+                        Sidan är utvecklad helt från grunden av mig utan vare sig bibliotek eller ramverk. Detta har jag gjort
+                        för att jag hellre vill visa vad jag kan utan att bygga på andras verktyg, även om många saker hade varit
+                        enklare att implementera på detta vis. 
+                    </p>
+                    <p>
+                        Besök gärna mitt <a>github</a> repo för den här sidan för att kika på koden i den form jag utvecklat den. 
+                    </p>
+                </div>
+                <div class="portfolio_entry">
+                    <h1> EAN </h1>
+                    <img>
+                    <p>
+                        Det här är det program som jag utvecklat för att förenkla hanteringen av Streckkoder på Ica Kvantum i Piteå.
+                    </p>
+                    <p>
+                        I och med självscanningssystemen som är vanliga idag är man tvungen att ha streckkoder på alla varor så att
+                        kunderna kan registrera dessa själva. I regel sätter man upp streckkoder vid varorna om det inte är förpackade varor
+                        som har streckkoder på förpackningen. På grund av begränsningar i kassasystemen så innebär det att samma streckkoder
+                        även måste finnas i kassorna för att man på korrekt sätt ska kunna stämma av kundernas köprundor. För att förenkla för
+                        kassörerna, som ofta är relativt nya medarbetare, bör dessa listor vara överskådliga och gärna med bilder. Tidigare hantering av
+                        detta har skett i word-dokument och hanterats manuellt vilket är:
+                    </p>
+                    <ul>
+                        <li>Tidsödande</li>
+                        <li>Lätt att bli fel</li>
+                    </ul>
+                    <p>
+                        På grund av sortimentsförändringar över tid krävs det även att dessa listor underhålls kontinuerligt där man tar bort
+                        gamla streckkoder och lägger till nya. 
+                    </p>
+                    <p>
+                        Mitt program går ut på att man kan ladda en fil som innehåller ett komplett sortiment, dvs inkluderat varor som inte för
+                        närvarande finns i butiken, enkelt välja vilka som ska finnas med på listan och sedan skriva ut en lista. Man kan även spara
+                        ändringarna så att man i framtiden enkelt kan justera listan. På grund av att IT-systemen är låsta och endast program som är
+                        godkända centralt i regel kan installeras på datorerna valde jag att bygga programmet som en ren front-end webb-applikation.
+                        Det betyder att filhantering sker med hjälp av HTML5s filsystem och <em>on-the-fly</em> generering av filer i webbläsaren som 
+                        sparas genom att laddas ner.
+                    </p>
+                    <p> Besök gärna projektets <a class="_blank" href="https://github.com/grunmurstraumr/EAN">github</a> repo för att se hur jag löst problemen!</p>
+                </div>
+
+            </section> <!-- End portfolio section -->
         </div>
     </body>
 </html>

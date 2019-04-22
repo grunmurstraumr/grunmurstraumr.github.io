@@ -1,0 +1,61 @@
+
+.nav_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100%+40px);
+    height: 1em;
+    a{
+        flex-grow: 1;
+        animation: fade_in 1s;
+    }
+
+}
+
+#main_nav{
+    height: 2.5em;
+
+    border-bottom: 1px solid $text_color;
+    a{
+        font-size: 16pt;
+        flex-grow: 1;
+    }
+}
+
+#secondary_nav{
+    margin: 1em;
+    font-size: 1em;  
+}
+
+.sticky{
+    position: fixed;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 10vw;
+    height: 50vh;
+   //background-color: $main_background_color;
+    margin: 0;
+    animation: 1s fade_in; 
+    a{
+        display: block;
+
+        margin: 5vh;
+    }
+
+}
+
+.section_select{
+    display: inline-block;
+    text-decoration: none;
+    color: $text_color;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.highlight_selection{
+    //text-decoration: underline;
+    animation: 1s blinking_underline 1 ease-in-out;
+}

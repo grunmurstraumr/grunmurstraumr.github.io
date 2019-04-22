@@ -1,0 +1,152 @@
+@import 'palette';
+
+
+*{
+    box-sizing: border-box;
+}
+
+/*************************************************
+* Base elements
+************************************************/
+body{
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+    background-color: $main_background_color;
+    color: $text_color;
+    font-family: 'Cousine';
+    overflow-y: scroll;
+
+}
+
+summary{
+    cursor: pointer;
+}
+
+h1, h2, h3, h4{
+    color: $heading_color;
+}
+
+a{
+    color: $a_color;
+    &:visited{
+        color: $a_color;
+    }
+}
+
+ul{
+    list-style-type: none;
+}
+
+p + p{
+    margin-top: 2em;
+}
+/*************************************************
+* Class selectors
+*************************************************/
+.hidden, .data_store{
+    display: none;
+}
+
+.terminal_window{
+    border-top: 1px solid $text_color;
+    display: block;
+    
+    margin: 0 auto;
+    //Overridden in media queried styles:
+    width: 40vw;
+}
+.cmdline{
+    display: inline;
+    line-height: 2em;
+    &::before{
+        color: $cmdline_host_color;
+        content: "erik_g@hire_me:~$  "; // Default text
+    }
+
+}
+
+.command{
+    color: $command_color;
+}
+
+.caret{
+    color: $caret_color;
+    display:inline;
+    animation: 0.7s caret_blink infinite;
+}
+
+.skill_details, .portfolio_entry{
+    min-height: 250px;
+    margin-bottom: 20px;
+    h1{
+        margin: 1em 0 0 0;
+    }
+    p{
+        margin: 0 0 1em 0;
+    }
+    ul{
+        margin: 0 0 2em 1em;
+    }
+
+    details > p{
+        margin: 0 0 0 2em ;
+    }
+}
+
+.image{
+    //position: relative
+    margin : 20px;
+    animation: 2s fade_in 1;//, 0.5s spin_in 2 linear;
+}
+
+.profile_pic{
+    float: right;
+    width: 200px;
+    height: 200px;
+}
+
+.logo_pic{
+    float: right;
+    width: 150px;
+    height: 150px;
+}
+
+
+#std_out_wrapper{
+    margin: 20px;
+}
+
+#typing_speed_control_container{
+    position: fixed;
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    background-color: $main_background_color;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    label{
+        display: block;
+    }
+}
+
+.typing-speed-control-end{
+    display: inline-block;
+    font-size: 18pt;
+    margin: 0 5px 0 5px;
+}
+#typing_speed_control{
+
+    appearance: none;
+    transform: rotate(180deg);
+    background-color: black;
+    outline: 1px solid $text_color;
+    color: $text_color;
+
+    &::-moz-range-thumb, &::-webkit-slider-thumb{
+        cursor: pointer;
+        background-color: $text_color;
+        border: none;
+    }
+}
+

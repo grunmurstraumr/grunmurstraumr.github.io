@@ -1,0 +1,21 @@
+@import '_animations';
+@import '_palette';
+
+#cv{
+    padding: 5%;
+    overflow: hidden;
+    background-color: white;
+    color: black;
+    animation: 1s grow_in;
+    box-shadow: 5px 5px 20px black ;
+    //border-radius: 5px;
+
+    details{
+        margin: 5px 0 30px 5%;
+    }
+
+    details[open]{
+        margin-bottom: 30px;
+    }
+    
+}
