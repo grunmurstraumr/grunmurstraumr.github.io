@@ -1,0 +1,14 @@
+@media screen and (min-width: 480px) and (max-width: 1024px){
+    #secondary_nav{
+        a{
+            margin-left: 0;
+            
+            & .sticky{
+                font-size: 0.5em;
+            }
+        }
+    }
+    .terminal_window{
+        width: 80vw;
+    }
+}

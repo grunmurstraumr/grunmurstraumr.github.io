@@ -8,11 +8,9 @@
 
 @import 'global_styling';
 @import 'navigation';
-
-
-
-
-
-
+@import 'portfolio';
 @import 'cv';
-@import '_small_screens';
+@import 'xlarge_screens';
+@import 'large_screens';
+@import 'medium_screens';
+@import 'small_screens';

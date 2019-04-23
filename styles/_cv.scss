@@ -4,18 +4,54 @@
 #cv{
     padding: 5%;
     overflow: hidden;
-    background-color: white;
-    color: black;
     animation: 1s grow_in;
-    box-shadow: 5px 5px 20px black ;
-    //border-radius: 5px;
+    border-radius: 5px;
 
     details{
-        margin: 5px 0 30px 5%;
+        margin: 5px 0 20px 5%;
     }
+
+    details > ul{
+        padding: 0 30px;
+    }
+
 
     details[open]{
         margin-bottom: 30px;
     }
+
+    h1, h2, h3, h4{
+        //margin-top: 16px;
+    }
     
+    summary > h2{
+        display: inline-block;
+    }
+
 }
+
+.title_summary{
+}
+
+.heading_summary{
+    font-weight: bold;
+    color: $heading_color;
+}
+
+.portfolio_entry img{
+    object-fit: contain;
+    width: 100%;
+    margin: 2%;
+    border: 1px solid $text_color;
+    box-shadow: 0 0 2px $text_color;
+    filter: grayscale(100%);
+    transform: scale(0.95);
+    transition: filter 0.5s, transform 0.5s, border-radius 0.7s;
+
+    &:hover{
+        filter: grayscale(0);
+        transform: scale(1.05);
+
+    }
+}
+

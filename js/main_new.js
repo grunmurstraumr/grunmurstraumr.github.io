@@ -108,17 +108,21 @@ class Output{
                         iteration_delay = 250;
                     */
                     }else if(tag.match(/<a\b.*>/)){
-                        index = text.indexOf('</a>', index);
-                        index = text.indexOf('>', index);
-                        tag = text.substring(old_index,index+1);
-                        if (tag.match(/class=\s?["']{1}section_navlink["']{1}/)){
+                        console.log('Anchor tag found')
+                        let new_index = text.indexOf('</a>', index);
+                        new_index = text.indexOf('>', new_index);
+                        let new_tag = text.substring(old_index,new_index+1);
+                        console.log('Complete tag')
+                        console.log(new_tag);
+                        if (new_tag.match(/class=\s?["']{1}section_navlink["']{1}/)){
                             console.log('Found navlink')
                             iteration_delay=0;
-                            let nav_element = document.createRange().createContextualFragment(tag);
+                            let nav_element = document.createRange().createContextualFragment(new_tag);
                             let nav_container = document.querySelector('#secondary_nav');
                             
                             nav_container.appendChild(nav_element);
                             block_append=true;
+                            index = new_index;
                         }
                     }
                     else
@@ -154,7 +158,8 @@ class Output{
             }
             else{
                 //Insert the final caret
-                output_wrapper.lastChild.innerHTML += this.caret;
+                let caret_element = document.createRange().createContextualFragment(this.caret);
+                output_wrapper.lastChild.appendChild(caret_element);
                 this.writing = false;
                 return
             }
@@ -227,17 +232,18 @@ function assign_listeners(){
     });
     document.querySelector('#portfolio_link').addEventListener('click', event => {
         let portfolio_section = document.querySelector('#portfolio');
+        let links = portfolio_section.querySelectorAll('.section_navlink');
+        let navlink_container = document.querySelector('#secondary_nav');
+        for (let link of links){
+            link.parentNode.removeChild(link);
+            navlink_container.appendChild(link)
+        }
         document.querySelector('#std_out').innerHTML = portfolio_section.outerHTML;
     })
     document.querySelector('#cv_link').addEventListener('click',event => {
         let cv_section = document.querySelector('#cv');
-        let nav_elements = cv_section.querySelectorAll('.section_navlink');
-        let nav_container = document.querySelector('#secondary_nav');
-        for (let navlink of nav_elements){
-            navlink.parentNode.removeChild(navlink);
-            nav_container.appendChild(navlink);
-        }
-        document.querySelector('#std_out').innerHTML = cv_section.outerHTML;
+        let output_element = document.querySelector('#std_out')
+        output_element.innerHTML = '<span class="command">show CV</span>' + cv_section.outerHTML;
     });
     
     document.querySelector('#typing_speed_control').addEventListener('change', event =>{
@@ -274,11 +280,11 @@ document.addEventListener('DOMContentLoaded', () =>{
             i = 0;
 
     },500);
-    output.write("Hej <strong>Tromb!</strong> <pause>\nKlicka på länkarna ovanför för att se min ansökan!");
+    output.write('<p class="hello">Hej <strong>Tromb!</strong></p><p>Klicka på länkarna ovanför för att se min ansökan!</p><p> PS, Sidan ser bäst ut i chrome.</p>');
     let out = document.querySelector('#std_out_wrapper');
     
     // Temporär
-    document.querySelector('#c').click();
+    //document.querySelector('#cv_link').click();
 
 })
 

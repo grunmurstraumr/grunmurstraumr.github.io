@@ -24,3 +24,37 @@
         transform: scale(1,1);
     }
 }
+@keyframes color_flow{
+
+    0% {
+		background-position: 0% 100%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 100%
+	}
+}
+@keyframes color_flowold{
+    0%{
+        //color: $text_color;
+        background: -webkit-linear_gradient($text_color, $command_color);
+    }
+    25%{
+        //color: $command_color;
+        background: -webkit-linear_gradient($command_color, $cmdline_host_color);
+    }
+    50%{
+        //color: $cmdline_host_color;
+        background: -webkit-linear_gradient($cmdline_host_color, $a_color);
+    }
+    75%{
+       // color: $a_color;
+       background: -webkit-linear_gradient($a_color, $command_color);
+    }
+    100%{
+        //color: $text_color;
+        background: -webkit-linear_gradient($command_color, $text_color);
+    }
+}

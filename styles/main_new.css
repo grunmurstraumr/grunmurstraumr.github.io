@@ -96,6 +96,66 @@
   }
 }
 
+@-webkit-keyframes color_flow {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes color_flow {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@-webkit-keyframes color_flowold {
+  0% {
+    background: -webkit-linear_gradient(#EFEFEF, #4d8321);
+  }
+  25% {
+    background: -webkit-linear_gradient(#4d8321, #EAAE3F);
+  }
+  50% {
+    background: -webkit-linear_gradient(#EAAE3F, #B0413E);
+  }
+  75% {
+    background: -webkit-linear_gradient(#B0413E, #4d8321);
+  }
+  100% {
+    background: -webkit-linear_gradient(#4d8321, #EFEFEF);
+  }
+}
+
+@keyframes color_flowold {
+  0% {
+    background: -webkit-linear_gradient(#EFEFEF, #4d8321);
+  }
+  25% {
+    background: -webkit-linear_gradient(#4d8321, #EAAE3F);
+  }
+  50% {
+    background: -webkit-linear_gradient(#EAAE3F, #B0413E);
+  }
+  75% {
+    background: -webkit-linear_gradient(#B0413E, #4d8321);
+  }
+  100% {
+    background: -webkit-linear_gradient(#4d8321, #EFEFEF);
+  }
+}
+
 ::-webkit-scrollbar {
   width: 1em;
 }
@@ -118,6 +178,31 @@
 /*************************************************
 * Base elements
 ************************************************/
+h1 {
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+h5 {
+  font-size: 1.2em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
 body {
   padding-top: 5vh;
   padding-bottom: 10vh;
@@ -131,7 +216,12 @@ summary {
   cursor: pointer;
 }
 
+summary ~ p {
+  padding: 10px;
+}
+
 h1, h2, h3, h4 {
+  margin: 1em 0 0 0;
   color: #397677;
 }
 
@@ -147,6 +237,10 @@ ul {
   list-style-type: none;
 }
 
+p {
+  text-indent: 2em;
+}
+
 p + p {
   margin-top: 2em;
 }
@@ -154,6 +248,28 @@ p + p {
 /*************************************************
 * Class selectors
 *************************************************/
+.hello {
+  display: inline-block;
+  font-size: 1.4em;
+}
+
+.hello strong {
+  background: linear-gradient(45deg, #EFEFEF, #4d8321, #EAAE3F, #B0413E, #4d8321);
+  font-size: 2em;
+  font-weight: 900;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 200% 100%;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: 3s color_flow infinite;
+          animation: 3s color_flow infinite;
+  color: #EFEFEF;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
 .hidden, .data_store {
   display: none;
 }
@@ -191,10 +307,6 @@ p + p {
   margin-bottom: 20px;
 }
 
-.skill_details h1, .portfolio_entry h1 {
-  margin: 1em 0 0 0;
-}
-
 .skill_details p, .portfolio_entry p {
   margin: 0 0 1em 0;
 }
@@ -205,6 +317,7 @@ p + p {
 
 .skill_details details > p, .portfolio_entry details > p {
   margin: 0 0 0 2em;
+  font-style: italic;
 }
 
 .image {
@@ -246,7 +359,7 @@ p + p {
 
 .typing-speed-control-end {
   display: inline-block;
-  font-size: 18pt;
+  font-size: 1em;
   margin: 0 5px 0 5px;
 }
 
@@ -340,6 +453,14 @@ p + p {
           animation: 1s blinking_underline 1 ease-in-out;
 }
 
+.portfolio_entry ul {
+  list-style-type: disc;
+}
+
+.portfolio_entry ul li {
+  margin-left: 20px;
+}
+
 @keyframes caret_blink {
   0% {
     opacity: 1;
@@ -386,26 +507,136 @@ p + p {
   }
 }
 
+@keyframes color_flow {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes color_flowold {
+  0% {
+    background: -webkit-linear_gradient(#EFEFEF, #4d8321);
+  }
+  25% {
+    background: -webkit-linear_gradient(#4d8321, #EAAE3F);
+  }
+  50% {
+    background: -webkit-linear_gradient(#EAAE3F, #B0413E);
+  }
+  75% {
+    background: -webkit-linear_gradient(#B0413E, #4d8321);
+  }
+  100% {
+    background: -webkit-linear_gradient(#4d8321, #EFEFEF);
+  }
+}
+
 #cv {
   padding: 5%;
   overflow: hidden;
-  background-color: white;
-  color: black;
   -webkit-animation: 1s grow_in;
           animation: 1s grow_in;
-  -webkit-box-shadow: 5px 5px 20px black;
-          box-shadow: 5px 5px 20px black;
+  border-radius: 5px;
 }
 
 #cv details {
-  margin: 5px 0 30px 5%;
+  margin: 5px 0 20px 5%;
+}
+
+#cv details > ul {
+  padding: 0 30px;
 }
 
 #cv details[open] {
   margin-bottom: 30px;
 }
 
-@media screen and (max-width: 720px) {
+#cv summary > h2 {
+  display: inline-block;
+}
+
+.heading_summary {
+  font-weight: bold;
+  color: #397677;
+}
+
+.portfolio_entry img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  margin: 2%;
+  border: 1px solid #EFEFEF;
+  -webkit-box-shadow: 0 0 2px #EFEFEF;
+          box-shadow: 0 0 2px #EFEFEF;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: border-radius 0.7s, -webkit-filter 0.5s, -webkit-transform 0.5s;
+  transition: border-radius 0.7s, -webkit-filter 0.5s, -webkit-transform 0.5s;
+  transition: filter 0.5s, transform 0.5s, border-radius 0.7s;
+  transition: filter 0.5s, transform 0.5s, border-radius 0.7s, -webkit-filter 0.5s, -webkit-transform 0.5s;
+}
+
+.portfolio_entry img:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    font-size: 12pt;
+  }
+  .terminal_window {
+    width: 40vw;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  body {
+    font-size: 12pt;
+  }
+  .terminal_window {
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  #secondary_nav a {
+    margin-left: 0;
+  }
+  #secondary_nav a .sticky {
+    font-size: 0.5em;
+  }
+  .terminal_window {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main_nav {
+    height: auto;
+  }
+  #secondary_nav {
+    display: none;
+  }
+  .nav_container {
+    font-size: 0.8em;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+  }
+  body {
+    font-size: 14pt;
+  }
   .terminal_window {
     width: 100vw;
   }

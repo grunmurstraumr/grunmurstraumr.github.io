@@ -8,6 +8,15 @@
 /*************************************************
 * Base elements
 ************************************************/
+
+h1{font-size: 2.2em;
+    font-weight: 600;}
+h2{font-size: 1.7em;}
+h3{font-size: 1.4em;}
+h4{font-size: 1.3em;}
+h5{font-size: 1.2em;}
+h6{font-size: 1em;}
+
 body{
     padding-top: 5vh;
     padding-bottom: 10vh;
@@ -22,7 +31,12 @@ summary{
     cursor: pointer;
 }
 
+summary~p{
+    padding: 10px;
+}
+
 h1, h2, h3, h4{
+    margin: 1em 0 0 0;
     color: $heading_color;
 }
 
@@ -37,12 +51,33 @@ ul{
     list-style-type: none;
 }
 
+p{
+    text-indent: 2em;
+}
 p + p{
     margin-top: 2em;
 }
 /*************************************************
 * Class selectors
 *************************************************/
+.hello{
+    display: inline-block;
+    font-size: 1.4em;
+    strong{
+        background: linear-gradient(45deg, $text_color, $command_color,$cmdline_host_color,$a_color,  $command_color);
+        font-size: 2em;
+        font-weight: 900;
+        background-clip: text;
+        -webkit-background-clip: text;
+
+        background-size: 200% 100%;
+        -webkit-text-fill-color: transparent;
+        animation: 3s color_flow infinite;
+        color: $text_color;
+        animation-delay: 1s;
+        animation-direction: alternate 
+    }
+}
 .hidden, .data_store{
     display: none;
 }
@@ -79,7 +114,7 @@ p + p{
     min-height: 250px;
     margin-bottom: 20px;
     h1{
-        margin: 1em 0 0 0;
+       // margin: 1em 0 0 0;
     }
     p{
         margin: 0 0 1em 0;
@@ -90,6 +125,7 @@ p + p{
 
     details > p{
         margin: 0 0 0 2em ;
+        font-style: italic;
     }
 }
 
@@ -132,7 +168,7 @@ p + p{
 
 .typing-speed-control-end{
     display: inline-block;
-    font-size: 18pt;
+    font-size: 1em;
     margin: 0 5px 0 5px;
 }
 #typing_speed_control{
