@@ -41,9 +41,13 @@ h1, h2, h3, h4{
 }
 
 a{
+    text-decoration: none;
     color: $a_color;
     &:visited{
         color: $a_color;
+    }
+    &:hover{
+        text-decoration: underline;
     }
 }
 
@@ -62,20 +66,11 @@ p + p{
 *************************************************/
 .hello{
     display: inline-block;
-    font-size: 1.4em;
+    font-size: 1.2em;
     strong{
-        background: linear-gradient(45deg, $text_color, $command_color,$cmdline_host_color,$a_color,  $command_color);
         font-size: 2em;
         font-weight: 900;
-        background-clip: text;
-        -webkit-background-clip: text;
 
-        background-size: 200% 100%;
-        -webkit-text-fill-color: transparent;
-        animation: 3s color_flow infinite;
-        color: $text_color;
-        animation-delay: 1s;
-        animation-direction: alternate 
     }
 }
 .hidden, .data_store{

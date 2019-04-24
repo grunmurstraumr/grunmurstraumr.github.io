@@ -226,11 +226,16 @@ h1, h2, h3, h4 {
 }
 
 a {
+  text-decoration: none;
   color: #B0413E;
 }
 
 a:visited {
   color: #B0413E;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 ul {
@@ -250,24 +255,12 @@ p + p {
 *************************************************/
 .hello {
   display: inline-block;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 
 .hello strong {
-  background: linear-gradient(45deg, #EFEFEF, #4d8321, #EAAE3F, #B0413E, #4d8321);
   font-size: 2em;
   font-weight: 900;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-size: 200% 100%;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: 3s color_flow infinite;
-          animation: 3s color_flow infinite;
-  color: #EFEFEF;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
 }
 
 .hidden, .data_store {
