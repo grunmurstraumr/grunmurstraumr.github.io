@@ -280,8 +280,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             i = 0;
 
     },500);
-    output.write('<p class="hello">Hej <strong>Tromb!</strong></p><p>Klicka på länkarna ovanför för att se min ansökan!</p><p> PS, Sidan ser bäst ut i chrome.</p>');
-    let out = document.querySelector('#std_out_wrapper');
+    let intro = document.querySelector('#introduction');
+    write(intro.innerHTML);
     
     // Temporär
     //document.querySelector('#cv_link').click();
