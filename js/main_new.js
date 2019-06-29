@@ -76,10 +76,8 @@ class Output{
                 
             }
             let next_char = text[index];
-            let start_index = 0;
             if (next_char === '<'){
                 let block_append = false;
-                let block_traverse = false;
                 let old_index = index;
                 // Find the end of the tag
                 index = text.indexOf('>', index);
@@ -97,16 +95,6 @@ class Output{
                         // Collect the entire contents of the details tag
                         tag = text.substring(old_index, index+1);
                         iteration_delay = 250;
-                        block_traverse;
-                        
-                    /*} else if(tag.match(/<details.*>/)){
-                        index = text.indexOf('</details>',index)
-                        // Find the index of the last > of the tag
-                        index = text.indexOf('>', index);
-                        // Collect the entire contents of the details tag
-                        tag = text.substring(old_index, index+1);
-                        iteration_delay = 250;
-                    */
                     }else if(tag.match(/<a\b.*>/)){
                         console.log('Anchor tag found')
                         let new_index = text.indexOf('</a>', index);
@@ -190,7 +178,7 @@ const scroll_handler = event => {
     // Check for secondary navbar position
     let secondary_nav = document.querySelector('#secondary_nav');
     let navbar_pos = secondary_nav.offsetTop;
-    if (window.pageYOffset >= navbar_pos ){ //&& navbar_pos.firstChild){
+    if (window.pageYOffset >= navbar_pos ){
         secondary_nav.classList.add('sticky')
     }
     else{
@@ -280,11 +268,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             i = 0;
 
     },500);
-    let intro = document.querySelector('#introduction');
-    write(intro.innerHTML);
-    
-    // Temporär
-    //document.querySelector('#cv_link').click();
+    const hello = '<p class="hello"><strong>Hej!</strong></p><p>Klicka på länkarna ovanför för att se min ansökan!</p><p> PS, Sidan ser bäst ut i chrome.</p>';
+    write(hello);
 
 })
 
