@@ -1,3 +1,4 @@
+@import "animations";
 
 .nav_container{
     display: flex;
@@ -49,13 +50,24 @@
     display: inline-block;
     text-decoration: none;
     color: $text_color;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: color 0.5s ease-in-out, text-decoration-color 0.5s ease-in-out;
     text-align: center;
     cursor: pointer;
     &:hover{
         text-decoration: underline;
     }
 }
+
+@keyframes blinking_underline{
+    from{ //color: $cmdline_host_color;
+       color: green; }
+    to{ //color: $text_color;
+        color: purple; }
+}
 .highlight_selection{
-    //text-decoration: underline;
-    animation: 1s blinking_underline 1 ease-in-out;
+    text-decoration-color: $cmdline_host_color;
+    color: $cmdline_host_color;
+    //animation: blinking_underline 0.5s linear infinite alternate;
 }

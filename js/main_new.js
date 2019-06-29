@@ -241,8 +241,9 @@ document.addEventListener('DOMContentLoaded', () =>{
     output = new Output('std_out');
     let sections = Array.from(document.querySelectorAll('.section_select'));
     let i = 0;
+    initial_state = true;
     let interval = setInterval(()=>{
-    let class_name = 'highlight_selection';
+        const class_name = 'highlight_selection';
         if (!initial_state){
             sections.map(element => element.classList.remove(class_name));
             clearInterval(interval);

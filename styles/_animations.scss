@@ -10,10 +10,7 @@
     to { opacity: 1; }
 }
 
-@keyframes blinking_underline{
-    0%{ color: $cmdline_host_color; }
-    50%{ color: $text_color; }
-}
+
 
 @keyframes grow_in{
     from{
@@ -24,6 +21,8 @@
         transform: scale(1,1);
     }
 }
+
+
 @keyframes color_flow{
 
     0% {

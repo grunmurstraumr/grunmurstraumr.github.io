@@ -2,10 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=Cousine');
 @import 'reset';
-@import 'animations';
+
 @import 'palette';
 @import 'scrollbar';
-
 @import 'global_styling';
 @import 'navigation';
 @import 'portfolio';
@@ -14,3 +13,9 @@
 @import 'large_screens';
 @import 'medium_screens';
 @import 'small_screens';
+
+@import 'animations';
+
+body{
+    animation: color_flowold 2s infinte;
+}

@@ -4,158 +4,6 @@
   margin: 0;
 }
 
-@-webkit-keyframes caret_blink {
-  0% {
-    opacity: 1;
-  }
-  49% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes caret_blink {
-  0% {
-    opacity: 1;
-  }
-  49% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes fade_in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade_in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes blinking_underline {
-  0% {
-    color: #EAAE3F;
-  }
-  50% {
-    color: #EFEFEF;
-  }
-}
-
-@keyframes blinking_underline {
-  0% {
-    color: #EAAE3F;
-  }
-  50% {
-    color: #EFEFEF;
-  }
-}
-
-@-webkit-keyframes grow_in {
-  from {
-    -webkit-transform-origin: top left;
-            transform-origin: top left;
-    -webkit-transform: scale(0, 0);
-            transform: scale(0, 0);
-  }
-  to {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-}
-
-@keyframes grow_in {
-  from {
-    -webkit-transform-origin: top left;
-            transform-origin: top left;
-    -webkit-transform: scale(0, 0);
-            transform: scale(0, 0);
-  }
-  to {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-}
-
-@-webkit-keyframes color_flow {
-  0% {
-    background-position: 0% 100%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 100%;
-  }
-}
-
-@keyframes color_flow {
-  0% {
-    background-position: 0% 100%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 100%;
-  }
-}
-
-@-webkit-keyframes color_flowold {
-  0% {
-    background: -webkit-linear_gradient(#EFEFEF, #4d8321);
-  }
-  25% {
-    background: -webkit-linear_gradient(#4d8321, #EAAE3F);
-  }
-  50% {
-    background: -webkit-linear_gradient(#EAAE3F, #B0413E);
-  }
-  75% {
-    background: -webkit-linear_gradient(#B0413E, #4d8321);
-  }
-  100% {
-    background: -webkit-linear_gradient(#4d8321, #EFEFEF);
-  }
-}
-
-@keyframes color_flowold {
-  0% {
-    background: -webkit-linear_gradient(#EFEFEF, #4d8321);
-  }
-  25% {
-    background: -webkit-linear_gradient(#4d8321, #EAAE3F);
-  }
-  50% {
-    background: -webkit-linear_gradient(#EAAE3F, #B0413E);
-  }
-  75% {
-    background: -webkit-linear_gradient(#B0413E, #4d8321);
-  }
-  100% {
-    background: -webkit-linear_gradient(#4d8321, #EFEFEF);
-  }
-}
-
 ::-webkit-scrollbar {
   width: 1em;
 }
@@ -373,6 +221,140 @@ p + p {
   border: none;
 }
 
+@-webkit-keyframes caret_blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes caret_blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes grow_in {
+  from {
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes grow_in {
+  from {
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@-webkit-keyframes color_flow {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes color_flow {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@-webkit-keyframes color_flowold {
+  0% {
+    background: -webkit-linear_gradient(#EFEFEF, #4d8321);
+  }
+  25% {
+    background: -webkit-linear_gradient(#4d8321, #EAAE3F);
+  }
+  50% {
+    background: -webkit-linear_gradient(#EAAE3F, #B0413E);
+  }
+  75% {
+    background: -webkit-linear_gradient(#B0413E, #4d8321);
+  }
+  100% {
+    background: -webkit-linear_gradient(#4d8321, #EFEFEF);
+  }
+}
+
+@keyframes color_flowold {
+  0% {
+    background: -webkit-linear_gradient(#EFEFEF, #4d8321);
+  }
+  25% {
+    background: -webkit-linear_gradient(#4d8321, #EAAE3F);
+  }
+  50% {
+    background: -webkit-linear_gradient(#EAAE3F, #B0413E);
+  }
+  75% {
+    background: -webkit-linear_gradient(#B0413E, #4d8321);
+  }
+  100% {
+    background: -webkit-linear_gradient(#4d8321, #EFEFEF);
+  }
+}
+
 .nav_container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -433,6 +415,13 @@ p + p {
   display: inline-block;
   text-decoration: none;
   color: #EFEFEF;
+  text-decoration: underline;
+  -webkit-text-decoration-color: transparent;
+          text-decoration-color: transparent;
+  -webkit-transition: color 0.5s ease-in-out, -webkit-text-decoration-color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, -webkit-text-decoration-color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, text-decoration-color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, text-decoration-color 0.5s ease-in-out, -webkit-text-decoration-color 0.5s ease-in-out;
   text-align: center;
   cursor: pointer;
 }
@@ -441,9 +430,28 @@ p + p {
   text-decoration: underline;
 }
 
+@-webkit-keyframes blinking_underline {
+  from {
+    color: green;
+  }
+  to {
+    color: purple;
+  }
+}
+
+@keyframes blinking_underline {
+  from {
+    color: green;
+  }
+  to {
+    color: purple;
+  }
+}
+
 .highlight_selection {
-  -webkit-animation: 1s blinking_underline 1 ease-in-out;
-          animation: 1s blinking_underline 1 ease-in-out;
+  -webkit-text-decoration-color: #EAAE3F;
+          text-decoration-color: #EAAE3F;
+  color: #EAAE3F;
 }
 
 .portfolio_entry ul {
@@ -475,15 +483,6 @@ p + p {
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes blinking_underline {
-  0% {
-    color: #EAAE3F;
-  }
-  50% {
-    color: #EFEFEF;
   }
 }
 
@@ -633,5 +632,77 @@ p + p {
   .terminal_window {
     width: 100vw;
   }
+}
+
+@keyframes caret_blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes grow_in {
+  from {
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes color_flow {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes color_flowold {
+  0% {
+    background: -webkit-linear_gradient(#EFEFEF, #4d8321);
+  }
+  25% {
+    background: -webkit-linear_gradient(#4d8321, #EAAE3F);
+  }
+  50% {
+    background: -webkit-linear_gradient(#EAAE3F, #B0413E);
+  }
+  75% {
+    background: -webkit-linear_gradient(#B0413E, #4d8321);
+  }
+  100% {
+    background: -webkit-linear_gradient(#4d8321, #EFEFEF);
+  }
+}
+
+body {
+  -webkit-animation: color_flowold 2s infinte;
+          animation: color_flowold 2s infinte;
 }
 /*# sourceMappingURL=main_new.css.map */
