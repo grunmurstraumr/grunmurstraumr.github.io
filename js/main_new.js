@@ -49,7 +49,6 @@ class Output{
             if (this.speed_modifier <= 0){
                 this.html_node.innerHTML = text + this.caret;
                 let navlinks = this.html_node.querySelectorAll('.section_navlink');
-                console.log(navlinks)
                 let nav_container = document.querySelector('#secondary_nav');
                 clear_node(nav_container);
                 for(let node of navlinks){
@@ -82,8 +81,6 @@ class Output{
                 // Find the end of the tag
                 index = text.indexOf('>', index);
                 let tag = text.substring(old_index, index+1)
-                console.log(`Found tag: ${tag}`)
-                console.log(output_wrapper)
                 if (tag.match(/<\w+[\s\w=#_"+'.:/\-]*\/?>/)){
                     // Tag is an opening tag
                     // Check for details tag
@@ -96,14 +93,10 @@ class Output{
                         tag = text.substring(old_index, index+1);
                         iteration_delay = 250;
                     }else if(tag.match(/<a\b.*>/)){
-                        console.log('Anchor tag found')
                         let new_index = text.indexOf('</a>', index);
                         new_index = text.indexOf('>', new_index);
                         let new_tag = text.substring(old_index,new_index+1);
-                        console.log('Complete tag')
-                        console.log(new_tag);
                         if (new_tag.match(/class=\s?["']{1}section_navlink["']{1}/)){
-                            console.log('Found navlink')
                             iteration_delay=0;
                             let nav_element = document.createRange().createContextualFragment(new_tag);
                             let nav_container = document.querySelector('#secondary_nav');
